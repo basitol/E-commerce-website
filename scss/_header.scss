@@ -1,0 +1,131 @@
+.header {
+  height: 80px;
+  padding: 20px 100px;
+
+  @include breakpoint-down(medium) {
+    padding: 18px 22px;
+  }
+
+  .vh {
+    visibility: hidden;
+  }
+
+  &.open {
+    &.overlay {
+      display: block;
+    }
+
+    .header__toggle {
+      z-index: 100;
+      > span:first-child {
+        transform: translatey(8px) rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: translatey(-6px) rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    z-index: 10;
+    opacity: 0.7;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: maroon;
+    // background-image: linear-gradient(red, transparent);
+  }
+
+  &__toggle {
+    margin-top: 9px;
+    margin-right: 20px;
+    margin-left: 0;
+    //Mobile toggle
+
+    > span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: hsl(219, 9%, 45%);
+      transition: 0.3s ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__menu {
+    z-index: 50;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% - 8rem);
+    height: 100%;
+    background: #fff;
+    padding: 1.625rem;
+    // transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+
+    a {
+      display: block;
+      color: hsl(219, 9%, 45%);
+      padding: 0.625rem;
+      text-align: left;
+      font-weight: bold;
+      color: hsl(220, 13%, 13%);
+      //   transform: translate3d(-150px, 0, 0);
+      //   transition: transform 0.15s ease-in;
+
+      &:first-child {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__link {
+    padding-top: 5px;
+    text-align: center;
+    text-decoration-style: none;
+
+    ul {
+      li {
+        a {
+          margin-right: 20px;
+          color: hsl(219, 9%, 45%);
+        }
+      }
+    }
+  }
+
+  &__logo {
+    padding-top: 5px;
+    margin-right: 40px;
+
+    img {
+      height: 20px;
+    }
+  }
+
+  &__cart {
+    padding-top: 5px;
+  }
+
+  &__avatar {
+    // height: 30px;
+
+    img {
+      align-items: center;
+      align-content: center;
+      height: 35px;
+      margin: auto 0 auto 30px;
+    }
+  }
+}
