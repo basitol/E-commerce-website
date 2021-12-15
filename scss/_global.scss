@@ -6,8 +6,12 @@
   text-decoration: none;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: lawngreen;
+  // background-color: lawngreen;
   min-height: 300vh;
   //   background-color: green;
   margin: inherit;
@@ -37,6 +41,16 @@ body {
 
   &-1 {
     flex-basis: 900px;
+  }
+}
+
+.line {
+  @include breakpoint-up(medium) {
+    width: 80%;
+    height: 1px;
+    // padding: 0 20%;
+    margin: 0 10% 0 10%;
+    background: hsl(223, 64%, 98%);
   }
 }
 
